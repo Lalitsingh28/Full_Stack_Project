@@ -20,7 +20,7 @@ const registerUser = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    const user = User.create({ username, email, password: hashedPassword });
+    const user = await User.create({ username, email, password: hashedPassword });
     if (user) {
         const otp = Math.floor(100000 + Math.random() * 900000).toString();
         const msg = `
@@ -30,8 +30,8 @@ const registerUser = async (req, res) => {
         await sendEmail(email, "Welcome to Our Platform", msg);
 
       res.status(201).json({ 
-        _id: user._id,
-        username: user.username,
+        id: user._id,
+        name: user.username,
         email: user.email,
         role: user.role,
         token: genearateToken(user._id),
