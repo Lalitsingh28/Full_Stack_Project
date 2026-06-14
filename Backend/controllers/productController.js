@@ -27,13 +27,13 @@ const getProductById = async (req, res) => {
 // Create a new product
 const createProduct = async (req, res) => {
   try {
-    const { name, description, price, category, stock } = req.body;
-    const imageUrl = await cloudinary.uploader.upload(req.file.path);
+    const { name, description, price, imageUrl, category, stock } = req.body;
+    // const imageUrl = await cloudinary.uploader.upload(req.file.path);
     const product = new Product({
       name,
       description,
       price,
-      imageUrl: imageUrl.secure_url,
+      imageUrl: imageUrl.secure_url || imageUrl,
       category,
       stock,
     });

@@ -1,0 +1,133 @@
+.contact-page {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 56px 0 64px;
+}
+
+.contact-intro {
+  max-width: 760px;
+  margin-bottom: 30px;
+}
+
+.contact-kicker {
+  margin: 0 0 10px;
+  color: #2563eb;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact-intro h1 {
+  margin: 0;
+  color: #111827;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.1;
+}
+
+.contact-intro p {
+  margin: 16px 0 0;
+  color: #4b5563;
+  font-size: 1.06rem;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.contact-form,
+.contact-details {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 14px 32px rgba(31, 41, 55, 0.08);
+}
+
+.contact-form {
+  display: grid;
+  gap: 10px;
+  padding: 26px;
+}
+
+.contact-form label {
+  color: #111827;
+  font-weight: 700;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  color: #111827;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+}
+
+.contact-form button {
+  min-height: 46px;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 800;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.contact-form button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.contact-details {
+  padding: 26px;
+}
+
+.contact-details h2,
+.contact-note h3 {
+  margin: 0 0 12px;
+  color: #111827;
+}
+
+.contact-details p {
+  margin: 0 0 12px;
+  color: #4b5563;
+}
+
+.contact-note {
+  margin-top: 18px;
+  border-radius: 8px;
+  padding: 18px;
+  background: #eff6ff;
+}
+
+.contact-note p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 820px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-page {
+    padding-top: 38px;
+  }
+}
